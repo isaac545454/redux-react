@@ -1,9 +1,11 @@
 import React, { useState } from "react"
+import {useDispatch } from "react-redux"
+import {ADDItem} from './actions/listActions'
 
 
 function TodoForm(props){
     const [text, settext] = useState()
-
+    const dispatch = useDispatch()
       function ler(event){
     
     let t = event.target.value
@@ -14,8 +16,10 @@ function TodoForm(props){
     function addItem( event ){
          event.preventDefault()
          if(text){
-         props.onItens(text)
+         dispatch(ADDItem(text))
           settext("")
+          props.onhideModal()
+          
          }
   }
     

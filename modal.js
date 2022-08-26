@@ -7,7 +7,7 @@ function Modal(props){
     function hideModal(event){
 
    let evento = event.target
-         if(evento.id == "modal"){
+         if(evento.id === "modal"){
                   props.onhideModal()
          }
         }
